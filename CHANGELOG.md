@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v8.4.0...master)
+## [Unreleased](https://github.com/laravel/laravel/compare/v8.4.1...8.x)
+
+
+## [v8.4.1 (2020-11-10)](https://github.com/laravel/laravel/compare/v8.4.0...v8.4.1)
+
+### Changed
+- Add auth line ([b54ef29](https://github.com/laravel/laravel/commit/b54ef297b3c723c8438596c6e6afef93a7458b98))
 
 
 ## [v8.4.0 (2020-10-30)](https://github.com/laravel/laravel/compare/v8.3.0...v8.4.0)
@@ -66,6 +72,6 @@
 - Re-add property to route service provider ([9cbc381](https://github.com/laravel/laravel/commit/9cbc3819f7b1c268447996d347a1733aa68e16d7))
 
 
-## [v8.0.0 (2020-09-08)](https://github.com/laravel/laravel/compare/v7.30.0...v8.0.0)
+## [v8.0.0 (2020-09-08)](https://github.com/laravel/laravel/compare/v7.30.1...v8.0.0)
 
 Laravel 8 comes with a lot of changes to the base skeleton. Please consult the diff to see what's changed.
