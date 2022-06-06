@@ -18,13 +18,11 @@ class ExceptionResource extends DataResource
      */
     public function with($request)
     {
-        if ($this->resource instanceof HttpExceptionInterface) {
-            return ['code' => $this->resource->getStatusCode(), 'message' => $this->resource->getMessage()];
-        }
-        if (config('app.debug')) {
-            return ['code' => $this->resource->getCode() ?: 1000, 'message' => $this->resource->getMessage()];
-        }
-        return ['code' => 1000, 'message' => 'Server Error'];
+        return match (true) {
+            $this->resource instanceof HttpExceptionInterface => ['code' => $this->resource->getStatusCode(), 'message' => $this->resource->getMessage()],
+            config('app.debug') => ['code' => $this->resource->getCode() ?: 1000, 'message' => $this->resource->getMessage()],
+            default => ['code' => 1000, 'message' => 'Server Error']
+        };
     }
 
     /**
