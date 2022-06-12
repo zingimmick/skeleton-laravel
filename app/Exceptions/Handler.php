@@ -52,6 +52,7 @@ class Handler extends ExceptionHandler
             if ($this->shouldReturnJson($request, $e)) {
                 return new ExceptionResource($e);
             }
+
             return null;
         });
     }

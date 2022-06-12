@@ -40,7 +40,7 @@ class ExceptionResource extends DataResource
                     'exception' => get_class($this->resource),
                     'file' => $this->resource->getFile(),
                     'line' => $this->resource->getLine(),
-                    'trace' => collect($this->resource->getTrace())->map(fn($trace) => Arr::except($trace, ['args']))->all(),
+                    'trace' => collect($this->resource->getTrace())->map(fn ($trace) => Arr::except($trace, ['args']))->all(),
                 ];
             }, null),
         ];
