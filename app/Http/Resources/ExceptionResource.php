@@ -19,7 +19,7 @@ class ExceptionResource extends DataResource
     public function with($request)
     {
         return match (true) {
-            $this->resource instanceof HttpExceptionInterface => ['code' => $this->resource->getStatusCode(), 'message' => $this->resource->getMessage()],
+            $this->resource instanceof HttpExceptionInterface => ['code' => $this->resource->getStatusCode() ?: 1000, 'message' => $this->resource->getMessage()],
             config('app.debug') => ['code' => $this->resource->getCode() ?: 1000, 'message' => $this->resource->getMessage()],
             default => ['code' => 1000, 'message' => 'Server Error']
         };
@@ -30,12 +30,12 @@ class ExceptionResource extends DataResource
      *
      * @param \Illuminate\Http\Request $request
      *
-     * @return array
+     * @return array{data: mixed}
      */
     public function toArray($request)
     {
         return [
-            'data' => $this->when(config('app.debug'), function () {
+            'data' => $this->when((bool) config('app.debug'), function () {
                 return [
                     'exception' => get_class($this->resource),
                     'file' => $this->resource->getFile(),

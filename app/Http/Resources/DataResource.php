@@ -9,6 +9,10 @@ class DataResource extends ApiResource
         parent::__construct($resource);
     }
 
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @return array{data: mixed}
+     */
     public function toArray($request)
     {
         return [
