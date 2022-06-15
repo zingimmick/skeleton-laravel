@@ -44,11 +44,13 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
+        $this->reportable(function (Throwable $e)
+        {
             //
         });
 
-        $this->renderable(function (Throwable $e, $request) {
+        $this->renderable(function (Throwable $e, $request)
+        {
             if ($this->shouldReturnJson($request, $e)) {
                 return new ExceptionResource($e);
             }

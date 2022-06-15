@@ -35,7 +35,8 @@ class ExceptionResource extends DataResource
     public function toArray($request)
     {
         return [
-            'data' => $this->when((bool) config('app.debug'), function () {
+            'data' => $this->when((bool) config('app.debug'), function ()
+            {
                 return [
                     'exception' => get_class($this->resource),
                     'file' => $this->resource->getFile(),
