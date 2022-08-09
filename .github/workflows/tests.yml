@@ -27,4 +27,7 @@ jobs:
         run: php artisan key:generate
 
       - name: Execute tests
-        run: vendor/bin/phpunit
+        run: |
+          php artisan test --parallel
+          vendor/bin/php-cs-fixer fix --dry-run
+          vendor/bin/phpstan analyse
