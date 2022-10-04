@@ -1,6 +1,6 @@
 {
-    "(and :count more error)": "(and :count more error)",
-    "(and :count more errors)": "(and :count more errors)",
+    "(and :count more error)": "(还有 :count 个错误)",
+    "(and :count more errors)": "(还有 :count 个错误)",
     "All rights reserved.": "版权所有。",
     "Forbidden": "访问被拒绝",
     "Go to page :page": "前往第 :page 页",
