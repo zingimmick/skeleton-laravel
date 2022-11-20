@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'accepted' => '您必须接受 :attribute。',
     'accepted_if' => '当 :other 为 :value 时，必须接受 :attribute。',
@@ -59,6 +61,7 @@ return [
     'ipv4' => ':Attribute 必须是有效的 IPv4 地址。',
     'ipv6' => ':Attribute 必须是有效的 IPv6 地址。',
     'json' => ':Attribute 必须是正确的 JSON 格式。',
+    'lowercase' => ':Attribute 必须小写。',
     'lt' => [
         'array' => ':Attribute 必须少于 :value 个元素。',
         'file' => ':Attribute 必须小于 :value KB。',
@@ -126,6 +129,7 @@ return [
     'timezone' => ':Attribute 必须是一个合法的时区值。',
     'unique' => ':Attribute 已经存在。',
     'uploaded' => ':Attribute 上传失败。',
+    'uppercase' => ':Attribute 必须大写',
     'url' => ':Attribute 格式不正确。',
     'uuid' => ':Attribute 必须是有效的 UUID。',
     'attributes' => [
