@@ -39,8 +39,7 @@ class Handler extends ExceptionHandler
             //
         });
 
-        $this->renderable(function (Throwable $e, $request)
-        {
+        $this->renderable(function (Throwable $e, $request) {
             if ($this->shouldReturnJson($request, $e)) {
                 return new ExceptionResource($e);
             }

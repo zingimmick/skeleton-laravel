@@ -18,8 +18,7 @@ class ApiResource extends JsonResource
 
     public static function collection($resource)
     {
-        return tap(parent::collection($resource), function (AnonymousResourceCollection $collection)
-        {
+        return tap(parent::collection($resource), function (AnonymousResourceCollection $collection) {
             $collection->with = self::DEFAULT_WITH;
         });
     }
